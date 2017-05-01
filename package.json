@@ -1,0 +1,22 @@
+{
+  "name": "webpack-learn",
+  "version": "1.0.0",
+  "description": "webpack学习和总结",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuitl/webpack-learn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuitl/webpack-learn/issues"
+  },
+  "homepage": "https://github.com/cuitl/webpack-learn#readme",
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  }
+}
