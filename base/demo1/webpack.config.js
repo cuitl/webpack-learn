@@ -12,7 +12,8 @@ module.exports = {
    output: {
         path: path.resolve(__dirname, 'dist'),
         // filename: 'index.bundle.js'
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        publicPath: '/'
    },
    module: {
         rules: [
@@ -31,6 +32,10 @@ module.exports = {
             }
         ]
    },
+   devtool: 'inline-source-map',
+   devServer: {
+        contentBase: './dist'
+   },
    plugins: [
        new cleanWebpackPlugin(['dist']),
         // new webpack.optimize.UglifyJsPlugin(),
@@ -41,3 +46,10 @@ module.exports = {
         })
    ]
 }
+
+// 当在此文件的同级目录中添加 package.json ,则必须 npm install 依赖，这样就无法复用最外层的已安装的依赖
+// 因此学习测试时 不添加 package.json, 以下为 相关学习中用到的命令
+
+// npx webpack --progress --watch,
+// npx  webpack-dev-server --open,
+// node server.js （不受是否有package.json影响）
