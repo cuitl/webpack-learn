@@ -6,8 +6,8 @@ const path = require('path');
 module.exports = {
 //    entry: './src/index.js',
    entry: {
-       index: './src/index.js',
-       print: './src/print.js'
+       index: './src/index.js'
+    //    print: './src/print.js'
    },
    output: {
         path: path.resolve(__dirname, 'dist'),
@@ -34,7 +34,8 @@ module.exports = {
    },
    devtool: 'inline-source-map',
    devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
    },
    plugins: [
        new cleanWebpackPlugin(['dist']),
@@ -43,7 +44,9 @@ module.exports = {
             // title 属性 在没有 template时使用 才有效果
             // title: 'Output Manager',
             template: './src/index.html'
-        })
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
    ]
 }
 

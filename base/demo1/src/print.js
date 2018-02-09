@@ -1,6 +1,7 @@
 
 export default function printMe() {
     console.log('I am print.js module');
-    console.log('I am print.js module2');
-    cosnole.error('this is a error');
+    console.log('print.js updated ~~~~~');
+    console.log('add 8******************');
+
 }
